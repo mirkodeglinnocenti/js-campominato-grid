@@ -13,7 +13,11 @@ console.log(playButtonElement);
 const grigliaElement = document.querySelector('.griglia');
 console.log(grigliaElement);
 
+
 playButtonElement.addEventListener ('click' , function() {
+
+    grigliaElement.innerHTML = '';
+
 
     for (let i = 0; i < celleTotali; i++ ) {
 
@@ -27,9 +31,13 @@ playButtonElement.addEventListener ('click' , function() {
         creazioneDiv.classList.add('cella');
         // inserimento del testo dentro il div
         creazioneDiv.innerHTML = numeroIncremento;
-        // inserimento del div dentro html
-        grigliaElement.append(creazioneDiv)
+        // Inserimento style della larghezza di ogni singola cella
+        // creazioneDiv.style="width: calc( 100% / ${celleLato} )";
+        creazioneDiv.style="width: calc( 100% / 10 )";
 
+        // inserimento del div dentro html
+        grigliaElement.append(creazioneDiv);
+        
 
         // al click
 
@@ -48,5 +56,8 @@ playButtonElement.addEventListener ('click' , function() {
 
     }
 
+    
 
 })
+
+
