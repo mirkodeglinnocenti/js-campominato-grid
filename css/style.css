@@ -36,4 +36,5 @@
 .game__button {
     color: white;
     background-color: cadetblue;
+    padding: 10px;
 }
