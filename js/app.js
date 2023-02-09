@@ -5,10 +5,10 @@ const celleLato = 10;
 
 const celleTotali = celleLato ** 2; // celleLato alla seconda che è uguale a scrivere celleLato x celleLato
 
-console.log(celleLato, celleTotali)
+console.log(celleLato, celleTotali);
 
 const playButtonElement = document.getElementById('game__button');
-console.log(playButtonElement)
+console.log(playButtonElement);
 
 const grigliaElement = document.querySelector('.griglia');
 console.log(grigliaElement);
@@ -20,12 +20,33 @@ playButtonElement.addEventListener ('click' , function() {
         let numeroIncremento = i + 1; //per far partire da 1 e arrivare a 100, senza questo passaggio partirebbe da 0 e si fermerebbe a 99
 
         // console.log(numeroIncremento);
-        let creazioneDiv = `<div class="cella" > ${numeroIncremento} </div>`;
-        console.log(creazioneDiv)
 
-        grigliaElement.innerHTML += creazioneDiv;
+        // creazione div
+        let creazioneDiv = document.createElement('div');
+        // inserimento classe dentro il div
+        creazioneDiv.classList.add('cella');
+        // inserimento del testo dentro il div
+        creazioneDiv.innerHTML = numeroIncremento;
+        // inserimento del div dentro html
+        grigliaElement.append(creazioneDiv)
+
+
+        // al click
+
+        const cellaCreataElement = document.querySelector('.cella:last-child');
+
+        console.log(cellaCreataElement);
+
+        cellaCreataElement.addEventListener ( 'click' , function() {
+
+            console.log(numeroIncremento);
+
+            creazioneDiv.classList.add('background-secondary')
+
+        })
         
 
     }
+
 
 })
