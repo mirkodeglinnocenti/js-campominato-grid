@@ -32,8 +32,9 @@ playButtonElement.addEventListener ('click' , function() {
         // inserimento del testo dentro il div
         creazioneDiv.innerHTML = numeroIncremento;
         // Inserimento style della larghezza di ogni singola cella
-        // creazioneDiv.style="width: calc( 100% / ${celleLato} )";
-        creazioneDiv.style="width: calc( 100% / 10 )";
+
+        // creazioneDiv.style="width: calc( 100% / " + celleLato + " )";      Metodo concatenando la stringa con una variabile utilizzando il +
+        creazioneDiv.style=`width:calc( 100% / ${celleLato} )`;             //Metodo utilizzando il template literals con i backtick
 
         // inserimento del div dentro html
         grigliaElement.append(creazioneDiv);
@@ -49,7 +50,7 @@ playButtonElement.addEventListener ('click' , function() {
 
             console.log(numeroIncremento);
 
-            creazioneDiv.classList.add('background-secondary')
+            creazioneDiv.classList.add('background-secondary');
 
         })
         
